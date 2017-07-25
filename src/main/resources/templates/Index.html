@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-light bg-faded">
+    <h1 class="navbar-brand mb-0">Car-part Tracker</h1>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Car Parts</h1>
+    </div>
+</div>
+<head>
+    <link rel="stylesheet" href="/static/style.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"></link>
+</head>
+<br />
+<body>
+<div class="col-6">
+    <form method="POST" th:action="@{/api/insert}" th:object="${Car}">
+        <div class="form-group">
+            <label >Car part</label>
+            <input th:input="*{carpart}" type="text" name="carpart" class="form-control" required="true"></input>
+        </div>
+        <div class="form-group">
+            <label>Work Undertaken</label>
+            <input th:input="*{workUndertaken}" type="text" name="workUndertaken" class="form-control" required="true"></input>
+        </div>
+        <div class="form-group">
+            <label>Hours Spent</label>
+            <input th:input="*{hoursSpent}" type="text" class="form-control" name="hoursSpent" required="true"></input>
+        </div>
+        <div class="form-group">
+            <label>Resoution Comments</label>
+            <input th:input="*{resoutionComments}" type="text" class="form-control" name="resoutionComments" required="true"></input>
+        </div>
+        <button id="submitBtn" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <div class="col-6">
+        <table class="table table-inverse">
+            <thead>
+            <tr>
+                <th>Car Part</th>
+                <th>Work Undertaken</th>
+                <th>Time spent</th>
+                <th>Resolution Comments</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${cars}">
+                <td th:text="${c?.carpart}"></td>
+                <td th:text="${c?.workUndertaken}"></td>
+                <td th:text="${c?.hoursSpent}"></td>
+                <td th:text="${c?.resoutionComments}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+   </body>
+</html>

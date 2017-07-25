@@ -1,0 +1,1 @@
+INSERT INTO CARS (CARPART, WORKUNDERTAKEN, HOURSPENT, RESOULTIONCOMMENTS) VALUES ('Tierod', 'Replaced inner tierod', '2', 'None, fixed it');
