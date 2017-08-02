@@ -1,7 +1,7 @@
 package com.carlos.cartracking.model;
 
 // Validation Class to be used in views so users can be alerted
-// of failed or successful operations, see index CarController for examples.
+// of failed or successful operations, see index CarControllerV1 for examples.
 
 public class Validation {
     public String success;
